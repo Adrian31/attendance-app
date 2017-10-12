@@ -1,0 +1,112 @@
+/********** OCTOPUS **********/
+
+
+var octopus = {
+  init:function() {
+    //set our current cat to the first one in the list
+    model.currentStudent = model.student[0];
+    studentView.init();
+    /*for(var i = 0; i <= 4; i++){
+
+
+      //console.log(model.student);
+      //return(model.student);
+      //tell our views to initialize
+    }*/
+  },
+
+  getCurrentStudent: function(){
+    return model.currentStudent;
+  },
+
+  getStudents: function() {
+    return model.students;
+  },
+
+  //set the currently selected student to the object passed in
+  setCurrentStudent: function(student){
+    model.currentStudent = student;
+  }
+
+};
+
+/********** VIEW **********/
+var studentView = {
+  init: function() {
+    this.studentElem = document.getElementById('student-name');
+    this.studentCheckbox = document.getElementById('checkbox');
+    // render this view (update the DOM elements with the right value)
+    //console.log(this.studentElem);
+    this.render();
+  },
+
+  render: function() {
+    // update the DOM elements with values from the current cat
+    var currentStudent = octopus.getCurrentStudent();
+
+    //console.log(currentStudent.name);
+    this.studentElem.textContent = currentStudent.name;
+    $checkbox.append(f);
+
+    for(var i; i <= 12; i++){
+
+      //console.log(currentStudent.days[i]);
+    }
+
+
+  }
+
+};
+
+octopus.init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<table>
+            <thead>
+                <tr>
+                    <th class="name-col">Student Name</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    <th>11</th>
+                    <th>12</th>
+                    <th class="missed-col">Days Missed-col</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="student">
+                    <td class="name-col">Slappy the Frog</td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="attend-col"><input type="checkbox"></td>
+                    <td class="missed-col">0</td>
+                </tr>
+            </tbody>
+        </table>-->

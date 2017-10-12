@@ -70,7 +70,7 @@ var octopus = {
 var studentListView = {
   init: function() {
     // Store the DOM element for easy access later
-    this.studentListElem = document.getElementById('table-data');
+    this.studentListElem = document.getElementById('student2');
 
     //render this view (update the DOM elements with the right values)
     this.render();
@@ -80,30 +80,20 @@ var studentListView = {
     // get the cats we'll be rendering from the octopus
     var students = octopus.getStudents();
 
-    // loop over the students
+    //empty the cat list
+    //this.studentListElem.innerHTML = '';
+
+    // loop over the cats
     for(var i = 0; i < students.length; i++){
       // this is the cat we're currently looping over
       var student = students[i];
 
       //make a new cat list item and set its text
-      var newTR = document.createElement('tr');
-      newTR.setAttribute("id", "student");
-
       var elem = document.createElement('td');
       elem.textContent = student.name;
 
-      this.studentListElem.appendChild(newTR);
-
-      newTR.appendChild(elem);
-      for(var x = 0; x < 12; x++){
-        var newTD = document.createElement('td');
-        newTD.setAttribute("class", "attend-col");
-        newTR.appendChild(newTD);
-
-      };
-
+      this.catListElem.appendChild(elem);
     };
-    $(".attend-col").append('<input type="checkbox">');
   }
 };
 
